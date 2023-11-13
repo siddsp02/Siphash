@@ -16,14 +16,12 @@
 } while (0)
 
 uint64_t siphash(const uint128_t k, array(char) *m) {
-    uint64_t k0, k1, m_i, v0, v1, v2, v3;
+    uint64_t m_i, v0, v1, v2, v3;
     size_t b, i, j, w;
-    k0 = k[0];
-    k1 = k[1];
-    v0 = k0 ^ 0x736F6D6570736575;
-    v1 = k1 ^ 0x646F72616E646F6D;
-    v2 = k0 ^ 0x6C7967656E657261;
-    v3 = k1 ^ 0x7465646279746573;
+    v0 = k[0] ^ 0x736F6D6570736575;
+    v1 = k[1] ^ 0x646F72616E646F6D;
+    v2 = k[0] ^ 0x6C7967656E657261;
+    v3 = k[1] ^ 0x7465646279746573;
     b = len((*m));
     w = (b + 7) / 8;
     for (i = 0; i < ((w * 8) - b); ++i)
