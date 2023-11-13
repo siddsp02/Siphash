@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
-#include "array.h"
-
-#define C 2
-#define D 4
-
-typedef uint64_t uint128_t[2];
+#include "siphash.h"
 
 #define ROTL64(n, b) (((n) << (b)) | (n) >> (64 - (b)))
 
