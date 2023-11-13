@@ -22,7 +22,7 @@ typedef uint64_t uint128_t[2];
     v3 = ROTL64(v3, 21) ^ v0;           \
 } while (0)
 
-uint64_t siphash(uint128_t k, array(char) *m) {
+uint64_t siphash(const uint128_t k, array(char) *m) {
     uint64_t k0, k1, m_i, v0, v1, v2, v3;
     size_t b, i, j, w;
     k0 = k[0];
